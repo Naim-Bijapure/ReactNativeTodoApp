@@ -1,0 +1,35 @@
+POST https://jumlakuwait.com/api/login_api/registerCustomer HTTP/1.1
+content-type: application/json
+
+{  
+    "user_role":1,
+    "register_username":"N1",
+    "register_password":12345,
+    "register_email":"n@gmail.com",
+    "register_countryCode":91,
+    "register_mobile_no":9898989898
+}
+
+###
+
+POST https://jumlakuwait.com/api/login_api/loginCustomer HTTP/1.1
+content-type: application/json
+
+{
+    "login_username":N,
+    "login_password":NNN
+}
+
+###
+POST https://jumlakuwait.com/api/login_api/registerCustomer HTTP/1.1
+content-type: application/json
+
+{
+    "user_role":1,
+    "register_username":"N1",
+    "register_password":12345,
+    "register_email":"n@gmail.com",
+    "register_countryCode":91,
+    "register_mobile_no":9898989898
+}
+
