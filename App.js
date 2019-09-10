@@ -23,7 +23,9 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import MainPage from './components-old/MainPage';
+import HomeScreen from './components/HomeScreen';
+
+// import MainPage from './components-old/MainPage';
 
 // import SignUp from './components/SignUp'
 // import HomeScreen from './components/HomeScreen';
@@ -32,7 +34,8 @@ const App = () => {
   return (
     <Fragment>
      {/* <HomeScreen></HomeScreen> */}
-   <MainPage></MainPage>
+   {/* <MainPage></MainPage> */}
+   <HomeScreen></HomeScreen>
     </Fragment>
   );
 };
