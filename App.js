@@ -23,19 +23,26 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './components/HomeScreen';
-
-// import MainPage from './components-old/MainPage';
-
-// import SignUp from './components/SignUp'
 // import HomeScreen from './components/HomeScreen';
+
+import { Provider } from 'react-redux'
+import { createStore,applyMiddleware } from 'redux'
+import thunk from 'redux-thunk';
+
+import todoApp from './reducer/todoApp';
+import HomeScreenNavigation from './components/HomeScreen';
+
+const store = createStore(todoApp,applyMiddleware(thunk))
 
 const App = () => {
   return (
     <Fragment>
      {/* <HomeScreen></HomeScreen> */}
    {/* <MainPage></MainPage> */}
-   <HomeScreen></HomeScreen>
+   <Provider store={store}>
+    <HomeScreenNavigation></HomeScreenNavigation>
+
+   </Provider>
     </Fragment>
   );
 };
