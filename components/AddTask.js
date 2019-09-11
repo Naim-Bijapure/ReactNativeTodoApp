@@ -67,7 +67,6 @@ class AddTask extends Component {
 
 
   onSubmit = () => {
-    alert(' added ');
     const { selectedCategory, selectedReminder, task, chosenDate } = this.state;
     let Data = {
       task: task,
@@ -76,6 +75,7 @@ class AddTask extends Component {
       category: selectedCategory
     }
     this.props.AddTask(Data, this.props.data);
+    alert(' Task Added ');
   }
   _signOutAsync = async () => {
     await AsyncStorage.clear();
@@ -102,7 +102,7 @@ class AddTask extends Component {
           <Form style={styles.form} >
 
             <Item rounded style={{ width: 350, height: 60, marginTop: 10 }} >
-              <Input placeholder='Enter Task' onChangeText={this.onChangeTask} />
+              <Input placeholder='Enter Task' onChangeText={(task) => this.setState({task})} value={this.state.task} />
             </Item>
 
             <Item rounded style={{ width: 350, height: 60, marginTop: 10 }} >
@@ -181,6 +181,18 @@ class AddTask extends Component {
       </Container>
     )
 
+  }
+  componentDidMount(){
+    
+ const { navigation } = this.props;
+    this.focusListener = navigation.addListener('didFocus', () => {
+     
+      this.setState({
+        task:'',
+        selectedCategory:'',
+        selectedReminder:''
+      });
+    });
   }
 }
 function mapStateToProps(state) {

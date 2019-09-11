@@ -36,7 +36,7 @@ class Auth extends Component {
             </Item>
             <Item floatingLabel last style={{ paddingBottom: 20 }}>
               <Label>Password</Label>
-              <Input onChangeText={this.onChangePassword} />
+              <Input secureTextEntry={true} onChangeText={this.onChangePassword} />
             </Item>
 
             <Button style={{ flex: 1, justifyContent: 'center', marginTop: 20 }}
